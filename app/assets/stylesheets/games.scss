@@ -33,3 +33,46 @@ h1 {
   font-weight: lighter;
   margin-top: 50px;
 }
+
+#form-container {
+  width: 550px;
+}
+
+.InputAddOn {
+  display: flex;
+  margin-bottom: 1.5em;
+  border-radius: 5px;
+}
+
+.InputAddOn-field {
+  flex: 1;
+  border-radius: 5px 0px 0px 5px;
+}
+.InputAddOn-field:not(:first-child) {
+  border-left: 1;
+}
+.InputAddOn-field:not(:last-child) {
+  border-right: 0;
+}
+
+.InputAddOn-item {
+  background-color: none;
+  color: inherit;
+  font: inherit;
+  font-weight: lighter;
+}
+
+.InputAddOn-field,
+.InputAddOn-item {
+  border: 1px solid rgba(147, 128, 108, 0.25);
+  padding: 0.5em 0.75em;
+}
+.InputAddOn-field:first-child,
+.InputAddOn-item:first-child {
+  border-radius: 2px 0 0 2px;
+}
+.InputAddOn-field:last-child,
+.InputAddOn-item:last-child {
+  border-radius: 0 5px 5px 0;
+}
+
