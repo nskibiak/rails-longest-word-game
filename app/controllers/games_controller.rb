@@ -1,6 +1,3 @@
-require 'json'
-require 'open-uri'
-
 class GamesController < ApplicationController
 
   def new
@@ -8,25 +5,18 @@ class GamesController < ApplicationController
   end
 
   def score
+    require 'json'
+    require 'open-uri'
+
     @guess = params[:guess].downcase
     @option_letters = params[:token].downcase
 
     if !@guess.chars.all? { |letter| @guess.chars.count(letter) == @option_letters.count(letter) }
-      @result = "Sorry, but #{@guess} can't be built out of #{@option_letters}"
-    elsif JSON.parse(open("https://wagon-dictionary.herokuapp.com/#{@guess.capitalize!}").read)["found"] != true
-      @result = "Sorry, but #{@guess} does not seem to be a valid English word."
+      @result = "Sorry, but #{@guess.upcase!} can't be built out of #{@option_letters}"
+    elsif JSON.parse(open("https://wagon-dictionary.herokuapp.com/#{@guess}").read)["found"] != true
+      @result = "Sorry, but #{@guess.upcase!} does not seem to be a valid English word."
     else
-      @result = "Congratulations! #{@guess} is a valid English word!"
+      @result = "Congratulations! #{@guess.upcase!} is a valid English word!"
     end
   end
 end
-
-# @guess.chars.all? { |letter| @option_letters.include?(letter) }
-
-#   def real_word
-#     url = "https://wagon-dictionary.herokuapp.com/#{@guess}"
-#     api_response = open(url).read
-#     parsed_response = JSON.parse(api_response)
-
-#     puts "#{parsed_response['found']}"
-#   end
