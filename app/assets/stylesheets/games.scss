@@ -1,9 +1,9 @@
 body {
   padding: 20px;
+  font-family: sans-serif;
 }
 
 h1 {
-  font-family: sans-serif;
   font-weight: normal;
   color: #333333;
 }
@@ -26,4 +26,10 @@ h1 {
   border: 1px solid #007ed3;
   box-shadow: 0 .5rem 1rem rgba(0,0,0,.15);
   margin: 0px 5px
+}
+
+#question {
+  font-style: italic;
+  font-weight: lighter;
+  margin-top: 50px;
 }
