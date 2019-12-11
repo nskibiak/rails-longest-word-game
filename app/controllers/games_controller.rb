@@ -18,9 +18,11 @@ class GamesController < ApplicationController
 
   def check_dictionary(guess)
     require 'json'
-    require 'open-uri'
+    # require 'open-uri'
+    require 'rest_client'
     request_url = "https://wagon-dictionary.herokuapp.com/#{guess}"
-    response = open(request_url).read
+    response = RestClient.get(request_url)
+    # response = open(request_url).read
     result = JSON.parse(response)
     result['found']
   end
