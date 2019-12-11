@@ -12,7 +12,7 @@ class GamesController < ApplicationController
     @option_letters = params[:token].downcase
 
     if !@guess.chars.all? { |letter| @guess.chars.count(letter) == @option_letters.count(letter) }
-      @result = "Sorry, but #{@guess} can't be built out of #{option_letters}"
+      @result = "Sorry, but #{@guess} can't be built out of #{@option_letters}"
     elsif JSON.parse(open("https://wagon-dictionary.herokuapp.com/#{@guess.capitalize!}").read)["found"] != true
       @result = "Sorry, but #{@guess} does not seem to be a valid English word."
     else
