@@ -10,8 +10,17 @@
       <%= "<strong>Congratulations!</strong> #{@guess.upcase} is a valid English word!".html_safe %>
     <% end %>
   </div>
-  <div id="link">
-    <%= link_to "Play again", new_path %>
+  <div id="link-bar">
+    <div id="link">
+      <%= link_to "Play again", new_path %>
+    </div>
+    <div id="link">
+      <%= link_to "Reset score", clear_path %>
+    </div>
+  <div>
+  <div id="score">
+    <div><strong>Score</strong></div>
+    <div><%= session[:score] %></div>
   </div>
 </div>
 

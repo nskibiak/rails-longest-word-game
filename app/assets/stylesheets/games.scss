@@ -17,9 +17,35 @@ a {
   margin-top: 20px;
 }
 
+#link-bar {
+  display: flex;
+  width: 200px;
+  justify-content: space-between;
+}
+
 #container {
   display: flex;
   justify-content: flex-start;
+  position: relative;
+}
+
+#score {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 60px;
+  left: 450px;
+  align-items: center;
+  justify-content: center;
+  height: 100px;
+  width: 100px;
+  background-color: #3998DB;
+  color: white;
+  font-family: courier;
+  font-size: 1.5em;
+  border: 1px solid #007ed3;
+  box-shadow: 0 .5rem 1rem rgba(0,0,0,.15);
+  margin: 0px 5px
 }
 
 #letter {

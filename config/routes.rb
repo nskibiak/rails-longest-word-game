@@ -4,4 +4,6 @@ Rails.application.routes.draw do
   # get 'score', to: 'games#score'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   post 'score', to: 'games#score', as: :score
+
+  get '/clear', to: 'games#clear', as: :clear
 end
