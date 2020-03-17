@@ -63,6 +63,14 @@ a {
   margin: 0px 5px
 }
 
+.letter:hover {
+  opacity: 75%;
+}
+
+.letter:active {
+  opacity: 25%;
+}
+
 #question {
   font-style: italic;
   font-weight: lighter;

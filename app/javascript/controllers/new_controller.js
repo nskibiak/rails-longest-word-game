@@ -7,4 +7,9 @@ export default class extends Controller {
   connect() {
     console.log("Hello from the new controller!")
   }
+
+  addLetter () {
+    var letter = event.target.dataset.value;
+    console.log(letter);
+  }
 }
