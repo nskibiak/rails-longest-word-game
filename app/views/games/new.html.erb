@@ -23,6 +23,9 @@
       <div><strong>Score</strong></div>
       <div><%= session[:score] %></div>
     </div>
+    <div id="link">
+      <%= link_to "Reset score", clear_path %>
+    </div>
   </div>
 </div>
 

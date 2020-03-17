@@ -3,6 +3,7 @@ class GamesController < ApplicationController
     @vowels = %w[a e i o u]
     @consonants = ('a'..'z').to_a - @vowels
     @letters = (@consonants.sample(5) + @vowels.sample(4)).shuffle
+    @score
   end
 
   def score
@@ -32,14 +33,14 @@ class GamesController < ApplicationController
   end
 
   def adjust_score(valid_word, english_word)
-    session[:score] = 0 if session[:score].nil?
+    session[:score] = 0
     correct = true if valid_word && english_word
     points = @guess.length
     session[:score] += points if correct
   end
 
   def clear
-    session[:score] = nil
+    session[:score] = 0
     redirect_to new_path
     # the two lines below are an alternative to redirect:
     # @letters = ('A'..'Z').to_a.sample(10)
