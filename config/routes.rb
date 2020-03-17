@@ -6,4 +6,6 @@ Rails.application.routes.draw do
   post 'score', to: 'games#score', as: :score
 
   get '/clear', to: 'games#clear', as: :clear
+
+  root 'games#new'
 end
