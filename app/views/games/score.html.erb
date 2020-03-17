@@ -1,29 +1,26 @@
-<h1>Result</h1>
-
-<div class="container">
-  <div id="result">
-    <% if @valid_word != true %>
-      <%= "Sorry, but <strong>#{@guess.upcase}</strong> can't be built out of #{@option_letters.join(', ').upcase}".html_safe %>
-    <% elsif @english_word != true %>
-      <%= "Sorry, but <strong>#{@guess.upcase}</strong> does not seem to be a valid English word.".html_safe %>
-    <% else %>
-      <%= "<strong>Congratulations!</strong> #{@guess.upcase} is a valid English word!".html_safe %>
-    <% end %>
+<div id="full-container">
+  <div id="left-side">
+    <h1>Result</h1>
+    <div id="result">
+      <% if @valid_word != true %>
+        <%= "Sorry, but <strong>#{@guess.upcase}</strong> can't be built out of #{@option_letters.join(', ').upcase}".html_safe %>
+      <% elsif @english_word != true %>
+        <%= "Sorry, but <strong>#{@guess.upcase}</strong> does not seem to be a valid English word.".html_safe %>
+      <% else %>
+        <%= "<strong>Congratulations!</strong> #{@guess.upcase} is a valid English word!".html_safe %>
+      <% end %>
+    </div>
   </div>
-  <div id="link-bar">
+  <div id="right-side">
+    <div id="score">
+      <div><strong>Score</strong></div>
+      <div><%= session[:score] %></div>
+    </div>
     <div id="link">
       <%= link_to "Play again", new_path %>
     </div>
     <div id="link">
       <%= link_to "Reset score", clear_path %>
     </div>
-  <div>
-  <div id="score">
-    <div><strong>Score</strong></div>
-    <div><%= session[:score] %></div>
   </div>
 </div>
-
-<!-- The word can’t be built out of the original grid
-The word is valid according to the grid, but is not a valid English word
-The word is valid according to the grid and is an English word -->
