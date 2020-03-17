@@ -33,7 +33,9 @@ class GamesController < ApplicationController
 
   def adjust_score(valid_word, english_word)
     session[:score] = 0 if session[:score].nil?
-    session[:score] += 1 if valid_word && english_word
+    correct = true if valid_word && english_word
+    points = @guess.length
+    session[:score] += points if correct
   end
 
   def clear
