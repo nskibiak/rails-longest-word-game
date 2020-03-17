@@ -1,6 +1,9 @@
 <div data-controller="new">
-  <h1>New game</h1>
-    <div id="container">
+
+<div id="full-container">
+  <div id="left-side">
+    <h1>New game</h1>
+    <div id="letters">
       <% @letters.each do |letter| %>
         <div class="letter" data-value="<%= letter %>" data-action="click->new#addLetter"><%= letter.upcase %></div>
       <% end %>
@@ -14,4 +17,13 @@
         <input id="token" name="token" type="hidden" value="<%= @letters %>" />
       </form>
     </div>
+  </div>
+  <div id="right-side">
+    <div id="score">
+      <div><strong>Score</strong></div>
+      <div><%= session[:score] %></div>
+    </div>
+  </div>
+</div>
+
 </div>

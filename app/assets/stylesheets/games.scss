@@ -23,7 +23,19 @@ a {
   justify-content: space-between;
 }
 
-#container {
+#full-container{
+  display: flex;
+}
+
+#right-side {
+  display: flex;
+  justify-content: center;
+  // align-items: center;
+  margin-top: 50px;
+  width: 400px;
+}
+
+#letters {
   display: flex;
   justify-content: flex-start;
   position: relative;
@@ -32,7 +44,6 @@ a {
 #score {
   display: flex;
   flex-direction: column;
-  position: absolute;
   top: 60px;
   left: 450px;
   align-items: center;
