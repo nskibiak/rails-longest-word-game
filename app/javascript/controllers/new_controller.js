@@ -1,9 +1,10 @@
+
 import { Controller } from "stimulus"
 
 export default class extends Controller {
-  static targets = [ "output" ]
+  static targets = [ ]
 
   connect() {
-    this.outputTarget.textContent = 'Hello, Stimulus!'
+    console.log("Hello from the new controller!")
   }
 }
