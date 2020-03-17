@@ -1,6 +1,8 @@
 class GamesController < ApplicationController
   def new
-    @letters = ('A'..'Z').to_a.sample(9)
+    @vowels = %w[a e i o u]
+    @consonants = ('a'..'z').to_a - @vowels
+    @letters = (@consonants.sample(5) + @vowels.sample(4)).shuffle
   end
 
   def score
